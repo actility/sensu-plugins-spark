@@ -1,8 +1,11 @@
 require 'sensu-plugin/check/cli'
 require 'rest-client'
 require 'json'
+require 'sensu-plugins-spark'
 
 class CheckSparkHealth < Sensu::Plugin::Check::CLI
+  include SensuPluginsSpark::SparkCommon
+
   option :endpoint,
          short: '-p ENDPOINT',
          long: '--endpoint ENDPOINT',
@@ -27,13 +30,6 @@ class CheckSparkHealth < Sensu::Plugin::Check::CLI
          description: 'Expecting spark status',
          in: ['ALIVE', 'STANDBY'],
          default: 'ALIVE'
-
-  def request
-    RestClient::Request.execute(
-      method: :get,
-      url: config[:endpoint]
-    )
-  end
 
   def check_health
     response = request
