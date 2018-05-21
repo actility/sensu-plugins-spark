@@ -5,17 +5,9 @@ This CHANGELOG follows the format located [here](https://github.com/sensu-plugin
 
 ## [Unreleased]
 
-### Security
-- updated `yard` dependency to `~> 0.9.11` per: https://nvd.nist.gov/vuln/detail/CVE-2017-17042 which closes attacks against a yard server loading arbitrary files (@majormoses)
-
-### Breaking Changes
-- bumped dependency of `sensu-plugin` to 2.x you can read about it [here](https://github.com/sensu-plugins/sensu-plugin/blob/master/CHANGELOG.md#v200---2017-03-29) (@majormoses)
-- dropped ruby 2.0 support (@majormoses)
-
 ### Added
-- Basic Skel to be used to make new plugin repo setup easier.
-- PR template
-- Rubocop config
-- basic testing setup
+- metrics-spark.rb: collect metrics from spark (@yuri-zubov)
+- check-spark-health.rb: monitor spark health (@yuri-zubov)
 
-[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-skel/compare/0b2d68b64a3d100c10da5e4cfce42206b9f22250...HEAD
+[Unreleased]: https://github.com/sensu-plugins/sensu-plugins-spark/compare/0.0.1...HEAD
+[0.0.1]: https://github.com/sensu-plugins/sensu-plugins-spark/compare/38e42bdd81d4bc1967e479538b632a60904b1cc0...0.0.1
